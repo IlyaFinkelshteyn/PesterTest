@@ -6,5 +6,8 @@ install:
       Install-Module Pester -MinimumVersion 3.4.0 -Scope CurrentUser -Force | Out-Null
 
 build_script:
-- ps: Invoke-Pester -OutputFile Result.xml -OutputFormat NUnitXml
-- ps: type .\Result.xml
+- ps: |
+    Import-Module Pester
+    (get-module pester).version.ToString()
+    Invoke-Pester -OutputFile Result.xml -OutputFormat NUnitXml
+    type .\Result.xml
