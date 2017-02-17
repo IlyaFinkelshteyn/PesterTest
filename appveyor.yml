@@ -12,4 +12,4 @@ build_script:
     Invoke-Pester -OutputFile Result.xml -OutputFormat NUnitXml
     type .\Result.xml
     $wc = New-Object 'System.Net.WebClient'
-    $wc.UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\Result.xml))
+    $wc.UploadFile("https://ci.appveyor.com/api/testresults/nunit3/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\Result.xml))
