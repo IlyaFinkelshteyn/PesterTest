@@ -2,8 +2,8 @@ version: 1.0.{build}
 
 install:
   - ps: |
-      Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force | Out-Null
-      Install-Package Pester -Version 3.4.6
+        Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force | Out-Null
+        Install-Package Pester -Version 3.4.6
       #Install-Module Pester -MinimumVersion 3.4.0 -Scope CurrentUser -Force -SkipPublisherCheck | Out-Null
 
 build_script:
